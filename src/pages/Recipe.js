@@ -25,6 +25,7 @@ const Recipe = () => {
     return () => {
       isMounted = false;
     };
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.id]);
 
   return (
