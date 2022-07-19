@@ -1,7 +1,7 @@
 import React from 'react';
 import Veggie from '../components/Veggie';
-import Popular from '../components/Popular';
 import { motion } from "framer-motion";
+import Random from '../components/Random';
 
 
 
@@ -9,7 +9,7 @@ function Home() {
   return (
     <motion.div>
       <Veggie />
-<Popular />
+<Random />
     </motion.div>
   )
 }
