@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const Popular = () => {
   const [popular, setPopular] = useState([]);
 
-  const getPopularRecipes = async () => {
+  const getPopular = async () => {
     const getData = localStorage.getItem("popular");
 
     if (getData) {
@@ -26,7 +26,7 @@ const Popular = () => {
   };
 
   useEffect(() => {
-    getPopularRecipes();
+    getPopular();
   }, []);
   return (
     <Wrapper>
