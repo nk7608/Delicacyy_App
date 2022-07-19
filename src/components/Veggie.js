@@ -7,11 +7,6 @@ import { Link } from "react-router-dom";
 function Veggie() {
   const [veggie, setVeggie] = useState([]);
 
-  useEffect(() => {
-    getVeggie();
-  }, []);
-
-
   const getVeggie = async () => {
 
         const check = localStorage.getItem('veggie');
@@ -29,6 +24,9 @@ function Veggie() {
 
 };
 
+    useEffect(() => {
+    getVeggie();
+  }, []);
 
   return (
     <div>
