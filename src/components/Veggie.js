@@ -7,17 +7,20 @@ import { Link } from "react-router-dom";
 function Veggie() {
   const [veggie, setVeggie] = useState("");
 
-  const getVeggie = async () => {
-   
+   const getVeggie = async () => {
+
+        const check = localStorage.getItem('veggie');
+  if(check){
+    setVeggie(JSON.parse(check));
+  }else{
     const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&tags=vegetarian`);
     //query added to get 9 recipes & format followed to hide api_keys
     const data = await api.json();       
 
+    localStorage.setItem("veggie", JSON.stringify(data.recipes));
+  
   setVeggie(data.recipes);
   }
-
-};
-
     useEffect(() => {
     getVeggie();
   }, []);
