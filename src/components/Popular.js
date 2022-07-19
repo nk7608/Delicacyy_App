@@ -24,10 +24,8 @@ const [popular, setPopular] = useState([]);
         const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`);
         //query added to get 9 recipes & format followed to hide api_keys
         const data = await api.json();       
-
+        setPopular(data.recipes);
         localStorage.setItem("popular", JSON.stringify(data.recipes));
-      
-      setPopular(data.recipes);
       }
 
     }; 
