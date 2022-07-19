@@ -16,10 +16,8 @@ function Veggie() {
     const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&tags=vegetarian`);
     //query added to get 9 recipes & format followed to hide api_keys
     const data = await api.json();       
-
+      setVeggie(data.recipes);
     localStorage.setItem("veggie", JSON.stringify(data.recipes));
-  
-  setVeggie(data.recipes);
   }
    };
     useEffect(() => {
