@@ -5,7 +5,7 @@ import '@splidejs/react-splide/css';
 import { Link } from "react-router-dom";
 
 function Veggie() {
-  const [veggie, setVeggie] = useState([]);
+  const [veggie, setVeggie] = useState("");
 
   const getVeggie = async () => {
    
