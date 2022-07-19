@@ -21,6 +21,7 @@ function Veggie() {
   
   setVeggie(data.recipes);
   }
+   };
     useEffect(() => {
     getVeggie();
   }, []);
