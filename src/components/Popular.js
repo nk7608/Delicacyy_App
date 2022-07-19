@@ -9,10 +9,6 @@ function Popular() {
 //the variable popular should be set using setPopular() function as soon as the state changes
 const [popular, setPopular] = useState([]);
 
-//runs the function as soon as the component gets mounted
-  useEffect(() => {
-    getPopular();
-  }, []);
 
   //async to fetch the data properly before rendering it
     const getPopular = async () => {
@@ -34,7 +30,13 @@ const [popular, setPopular] = useState([]);
       setPopular(data.recipes);
       }
 
-    };
+    }; 
+  
+  //runs the function as soon as the component gets mounted
+  useEffect(() => {
+    getPopular();
+  }, []);
+
 
     return ( 
     <div>
